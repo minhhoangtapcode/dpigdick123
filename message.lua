@@ -1007,7 +1007,10 @@ function UserModule:sendWebhook(webhookUrl, itemName, oldValue, newValue)
             Headers = {
                 ["Content-Type"] = "application/json"
             },
-            Body = httpService:JSONEncode({embeds = {embed}})
+            Body = httpService:JSONEncode({
+                content = "<@1065861794494689402>", -- 👈 Ping người dùng này
+                embeds = {embed}
+            })
         })
     end)
 
